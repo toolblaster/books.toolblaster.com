@@ -7,34 +7,35 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-body{font-family:'Inter',sans-serif;background:#f5f5f5;overflow-x:hidden;margin:0;padding:0}
+html,body{height:100%;margin:0;padding:0;font-family:'Inter',sans-serif;background:#f5f5f5;overflow-x:hidden;display:flex;flex-direction:column}
 #particleCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 :root{--primary-dark:#121212;--primary-red:#E34037}
 header{display:flex;align-items:center;justify-content:center;gap:0.5rem;background:var(--primary-dark);padding:1rem;border-bottom-left-radius:3rem;border-bottom-right-radius:3rem;position:relative;z-index:10}
-header svg{height:32px;width:32px;color:var(--primary-red)}
-header span{color:white;font-weight:800;font-size:1.25rem}
-.hero-section{position:relative;background:linear-gradient(135deg,rgba(18,18,18,0.9),rgba(227,64,55,0.85));border-radius:2rem;margin:2rem 1rem;padding:4rem 2rem;color:white;text-align:center;z-index:5}
-.hero-section h1{font-size:2.5rem;font-weight:800;margin-bottom:1rem}
-.hero-section p{margin-bottom:1rem;font-size:1rem}
-.hero-section a{margin-top:1rem;display:inline-block;padding:0.5rem 1rem;background:var(--primary-red);color:white;border-radius:1rem;font-weight:600;text-decoration:none;transition:all 0.2s ease}
+header svg{height:28px;width:28px;color:var(--primary-red)}
+header span{color:white;font-weight:800;font-size:1.1rem}
+.hero-section{position:relative;background:linear-gradient(135deg,rgba(18,18,18,0.9),rgba(227,64,55,0.85));border-radius:0.75rem;margin:2rem auto;padding:0.75rem 1rem;color:white;text-align:center;z-index:5;max-width:900px}
+.hero-section-inner{max-width:900px;margin:auto;padding:0 1rem;text-align:center}
+.hero-section h1{font-size:1.15rem;font-weight:800;margin-bottom:0.2rem}
+.hero-section p{margin-bottom:0.2rem;font-size:0.75rem}
+.hero-section a{margin-top:0.2rem;display:inline-block;padding:0.25rem 0.6rem;background:var(--primary-red);color:white;border-radius:0.4rem;font-weight:600;text-decoration:none;font-size:0.7rem;transition:all 0.2s ease}
 .hero-section a:hover{background:#c22f2f}
-.section-title{text-align:center;margin-bottom:2rem;color:var(--primary-red);font-weight:700;font-size:1.5rem}
-.featured-card,.book-card{background:white;border-radius:1rem;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.15);transition:transform 0.3s ease,box-shadow 0.3s ease;cursor:pointer;z-index:5}
-.featured-card:hover,.book-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,0,0,0.25)}
-.cover-wrapper{overflow:hidden;border-radius:1rem 1rem 0 0;height:300px;display:flex;justify-content:center;align-items:center;background:#f3f4f6}
+.section-title{text-align:center;margin:1.5rem 0;color:var(--primary-red);font-weight:700;font-size:1.25rem}
+.featured-card,.book-card{background:white;border-radius:0.75rem;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.1);transition:transform 0.3s ease,box-shadow 0.3s ease;cursor:pointer;z-index:5;display:flex;flex-direction:column;justify-content:space-between}
+.featured-card:hover,.book-card:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,0.2)}
+.cover-wrapper{overflow:hidden;border-radius:0.75rem 0.75rem 0 0;height:220px;display:flex;justify-content:center;align-items:center;background:#f3f4f6}
 .cover-wrapper img{width:100%;height:100%;object-fit:contain;transition:transform 0.3s ease}
 .cover-wrapper:hover img{transform:scale(1.05)}
-.card-content{padding:1rem;text-align:center}
-.card-content h3{font-weight:700;color:var(--primary-red);margin-bottom:0.5rem;font-size:1rem}
-.card-content p{font-size:0.75rem;color:#555;margin-bottom:0.5rem;height:3rem;overflow:hidden;text-overflow:ellipsis}
-.btn-group{display:flex;justify-content:center;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap}
-.btn{padding:0.5rem 0.75rem;border-radius:0.5rem;font-weight:600;text-decoration:none;font-size:0.7rem;transition:all 0.2s ease}
+.card-content{padding:0.75rem;text-align:center;display:flex;flex-direction:column;flex-grow:1}
+.card-content h3{font-weight:700;color:var(--primary-red);margin-bottom:0.3rem;font-size:0.95rem}
+.card-content p{font-size:0.7rem;color:#555;margin-bottom:0.5rem;flex-grow:1}
+.btn-group{display:flex;justify-content:center;gap:0.4rem;margin-top:auto;flex-wrap:wrap}
+.btn{padding:0.35rem 0.6rem;border-radius:0.4rem;font-weight:600;text-decoration:none;font-size:0.65rem;transition:all 0.2s ease}
 .btn-ebook{background:var(--primary-red);color:white}
 .btn-ebook:hover{background:#c22f2f}
 .btn-paperback{background:var(--primary-dark);color:white}
 .btn-paperback:hover{background:#2c2c2c}
-.grid-container{max-width:1200px;margin:auto;padding:2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;position:relative;z-index:5}
-footer{background:var(--primary-dark);color:white;padding:2rem;text-align:center;box-shadow:inset 0 5px 15px rgba(0,0,0,0.2);border-top-left-radius:3rem;border-top-right-radius:3rem;margin:2rem 1rem;z-index:5;position:relative}
+.grid-container{max-width:1100px;margin:auto;padding:1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.75rem;position:relative;z-index:5}
+footer{background:var(--primary-dark);color:white;padding:1.5rem;text-align:center;box-shadow:inset 0 4px 12px rgba(0,0,0,0.2);border-top-left-radius:3rem;border-top-right-radius:3rem;margin-top:auto;z-index:5;position:relative;font-size:0.85rem}
 footer a{text-decoration:underline;color:var(--primary-red)}
 </style>
 </head>
@@ -45,28 +46,19 @@ footer a{text-decoration:underline;color:var(--primary-red)}
 <span>Books.Toolblaster</span>
 </header>
 <section class="hero-section">
+<div class="hero-section-inner">
 <h1>📚 My Books on Amazon</h1>
-<p>Browse my collection of books, available in <span class="font-semibold">Kindle & Paperback</span>.</p>
-<p class="italic">Redirects directly to Amazon KDP product pages.</p>
-<a href="#featured-teen">👇 Explore Books</a>
-</section>
-<section id="featured-teen" class="max-w-4xl mx-auto my-8">
-<h2 class="section-title">Featured Teen Book</h2>
-<div class="featured-card">
-<div class="cover-wrapper"><img src="https://images-na.ssl-images-amazon.com/images/P/B0F7SLR1JT.01._SCLZZZZZZZ_.jpg" alt="101 Life Skills Every Teen Should Master Cover"></div>
-<div class="card-content">
-<h3>101 Life Skills Every Teen Should Master (13-17 years)</h3>
-<p>Manage stress, anxiety, and build confidence with practical tips every teen needs.</p>
-<div class="btn-group">
-<a href="https://www.amazon.com/dp/B0F7SLR1JT" target="_blank" class="btn btn-ebook">Kindle eBook</a>
-<a href="https://www.amazon.com/dp/B0F7YZZ95L" target="_blank" class="btn btn-paperback">Paperback</a>
-</div>
-</div>
+<p>Browse my collection of books in <span class="font-semibold">Kindle & Paperback</span>.</p>
+<a href="#kids-books">👇 Explore</a>
 </div>
 </section>
-<section id="featured-adult" class="max-w-4xl mx-auto my-8">
+<section id="kids-books">
+<h2 class="section-title">Kids' & Teen Books Collection</h2>
+<div class="grid-container" id="kids-books-grid"></div>
+</section>
+<section id="featured-adult" class="my-8 flex flex-col items-center text-center px-4 max-w-[900px] mx-auto">
 <h2 class="section-title">Featured Graphic Design Book</h2>
-<div class="featured-card">
+<div class="featured-card w-full">
 <div class="cover-wrapper"><img src="https://images-na.ssl-images-amazon.com/images/P/B0DXD7H994.01._SCLZZZZZZZ_.jpg" alt="Mastering Graphic Design Cover"></div>
 <div class="card-content">
 <h3>Mastering Graphic Design: A Comprehensive Guide to Visual Creativity</h3>
@@ -78,10 +70,6 @@ footer a{text-decoration:underline;color:var(--primary-red)}
 </div>
 </div>
 </section>
-<section id="kids-books">
-<h2 class="section-title">Kids' Books Collection</h2>
-<div class="grid-container" id="kids-books-grid"></div>
-</section>
 <footer>
 <p>© 2025 <span class="font-bold">Books.Toolblaster</span>. All rights reserved. | Visit us at <a href="https://books.toolblaster.com" target="_blank">books.toolblaster.com</a> | Available on <span class="font-semibold">Amazon</span></p>
 </footer>
@@ -89,33 +77,34 @@ footer a{text-decoration:underline;color:var(--primary-red)}
 // Particle Canvas
 const canvas=document.getElementById('particleCanvas'),ctx=canvas.getContext('2d');
 let width=canvas.width=window.innerWidth,height=canvas.height=window.innerHeight;
-class Particle{constructor(){this.x=Math.random()*width;this.y=Math.random()*height;this.r=Math.random()*3+1;this.sx=(Math.random()-0.5)*1;this.sy=(Math.random()-0.5)*1;this.c=`rgba(227,64,55,${Math.random()*0.5+0.2})`;}update(){this.x+=this.sx;this.y+=this.sy;if(this.x<0||this.x>width)this.sx*=-1;if(this.y<0||this.y>height)this.sy*=-1;}draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=this.c;ctx.fill();}}
-let particles=[];for(let i=0;i<100;i++){particles.push(new Particle());}
+class Particle{constructor(){this.x=Math.random()*width;this.y=Math.random()*height;this.r=Math.random()*2+1;this.sx=(Math.random()-0.5)*0.8;this.sy=(Math.random()-0.5)*0.8;this.c=`rgba(227,64,55,${Math.random()*0.5+0.2})`;}update(){this.x+=this.sx;this.y+=this.sy;if(this.x<0||this.x>width)this.sx*=-1;if(this.y<0||this.y>height)this.sy*=-1;}draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=this.c;ctx.fill();}}
+let particles=[];for(let i=0;i<80;i++){particles.push(new Particle());}
 function animate(){ctx.clearRect(0,0,width,height);particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(animate);}
 window.addEventListener('resize',()=>{width=canvas.width=window.innerWidth;height=canvas.height=window.innerHeight;});
 animate();
 
-// Kids books array
+// Kids + Teen books array
 const kidsBooks=[
+{title:"101 Life Skills Every Teen Should Master (13-17 years)",description:"Manage stress, anxiety, and build confidence with practical tips every teen needs.",image:"https://images-na.ssl-images-amazon.com/images/P/B0F7SLR1JT.01._SCLZZZZZZZ_.jpg",ebookUrl:"https://www.amazon.com/dp/B0F7SLR1JT",paperbackUrl:"https://www.amazon.com/dp/B0F7YZZ95L"},
 {title:"Big Feelings, Bigger Stories - 20 Short Stories to Help Kids Understand, Express and Grow Through Emotions (Age 9–12 years)",description:"Engaging short stories for kids.",image:"https://images-na.ssl-images-amazon.com/images/P/B0FFML3NTT.01._SCLZZZZZZZ_.jpg",ebookUrl:"https://www.amazon.com/dp/B0FFML3NTT",paperbackUrl:"https://www.amazon.com/dp/B0FFT3BMTX"},
 {title:"64 Essential Life Skills for Kids Ages 6-8: A Fun and Simple Guide to Confidence and Everyday Skills",description:"Fun guide to build essential skills.",image:"https://images-na.ssl-images-amazon.com/images/P/B0F26W79ND.01._SCLZZZZZZZ_.jpg",ebookUrl:"https://www.amazon.com/dp/B0F26W79ND",paperbackUrl:"https://www.amazon.com/dp/B0F27SFM4K"},
 {title:"188 Skills Every Kid Has to Know: Essential Life Skills for Smart, Confident, and Happy Kids",description:"Comprehensive skills guide for kids.",image:"https://images-na.ssl-images-amazon.com/images/P/B0F27PQYKK.01._SCLZZZZZZZ_.jpg",ebookUrl:"https://www.amazon.com/dp/B0F27PQYKK",paperbackUrl:"https://www.amazon.com/dp/B0F28J6WPZ"},
 {title:"60 Powerful Life Skills for Pre-teens: Fun and Easy Ways to Grow Confident and Independent",description:"Practical lessons for pre-teens.",image:"https://images-na.ssl-images-amazon.com/images/P/B0F1YJ12ML.01._SCLZZZZZZZ_.jpg",ebookUrl:"https://www.amazon.com/dp/B0F1YJ12ML",paperbackUrl:"https://www.amazon.com/dp/B0F27HL4MY"}
 ];
 
-// Render kids books
+// Render kids + teen books
 const gridContainer=document.getElementById('kids-books-grid');
 kidsBooks.forEach(book=>{
   const card=document.createElement('div');
   card.className='book-card';
   card.innerHTML=`
-  <div class="cover-wrapper"><img src="${book.image}" alt="${book.title} Cover"></div>
-  <div class="card-content">
+  <div class=\"cover-wrapper\"><img src=\"${book.image}\" alt=\"${book.title} Cover\"></div>
+  <div class=\"card-content\">
     <h3>${book.title}</h3>
     <p>${book.description}</p>
-    <div class="btn-group">
-      <a href="${book.ebookUrl}" target="_blank" class="btn btn-ebook">Kindle eBook</a>
-      <a href="${book.paperbackUrl}" target="_blank" class="btn btn-paperback">Paperback</a>
+    <div class=\"btn-group\">
+      <a href=\"${book.ebookUrl}\" target=\"_blank\" class=\"btn btn-ebook\">Kindle eBook</a>
+      <a href=\"${book.paperbackUrl}\" target=\"_blank\" class=\"btn btn-paperback\">Paperback</a>
     </div>
   </div>`;
   gridContainer.appendChild(card);
