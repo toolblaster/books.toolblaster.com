@@ -7,6 +7,7 @@
 <meta name="description" content="Discover life skills books for kids and teens by Vikas Rana. Kindle & Paperback editions to build confidence, emotional intelligence, and essential skills.">
 <meta name="keywords" content="life skills book for kids, life skills book for teens, emotional intelligence book for kids, Vikas Rana books, teen confidence books">
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlPSIjRTM0MDM3IiBzdHJva2Utd2lkdGg9IjIiPjxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVpb2luPSJyb3VuZCIgZD0iTTEyIDZWNG0wIDBINmEyIDIgMCAwMC0yIDJ2MTJhMiAyIDAgMDAyIDJoNm0wLTE0aDZhMiAyIDAgMDEyIDJ2MTJhMiAyIDAgMDEtMiAyaC02bTAgLTE0djE0IiAvPjwvc3ZnPg==">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://books.toolblaster.com/sitemap.xml">
 <script src="https://cdn.tailwindcss.com" defer></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -56,8 +57,8 @@ header span{color:white;font-weight:800;font-size:1.1rem}
 .btn-paperback{background:var(--primary-dark);color:white}
 .btn-paperback:hover{background:#2c2c2c}
 .grid-container{margin:auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr;gap:1.5rem;position:relative;z-index:5;width:100%;max-width:500px;}
-#featured-adult{margin:2rem 0;padding:0 1.5rem;text-align:center}
-#featured-adult .featured-card{max-width:500px;margin:auto}
+#graphic-design-book{margin:2rem 0;padding:0 1.5rem;text-align:center}
+#graphic-design-book .featured-card{max-width:500px;margin:auto}
 #benefits{margin:3rem auto;max-width:1200px;padding:0 1.5rem;text-align:center}
 #benefits h2.section-title{margin-bottom:2rem}
 .horizontal-cards{display:flex;flex-direction:row;gap:1.5rem;justify-content:center;flex-wrap:wrap}
@@ -65,8 +66,8 @@ header span{color:white;font-weight:800;font-size:1.1rem}
 #imageOverlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:none;justify-content:center;align-items:center;z-index:50}
 #imageOverlay img{max-width:90%;max-height:90%;border-radius:0.75rem;box-shadow:0 4px 20px rgba(0,0,0,0.5)}
 #imageOverlay span{position:absolute;top:2rem;right:2rem;font-size:2rem;color:white;cursor:pointer}
-@media(min-width:768px){.hero-section{margin:2rem auto;max-width:1024px;padding:1.5rem 2rem}.hero-section h1{font-size:1.5rem}.hero-section p{font-size:1rem}.hero-section a{padding:0.5rem 1rem;font-size:0.9rem}.grid-container{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));max-width:1024px}#featured-adult{max-width:1024px;margin:3rem auto}}
-@media(min-width:1280px){.hero-section{max-width:1400px}.grid-container{max-width:1400px}#featured-adult{max-width:1200px}}
+@media(min-width:768px){.hero-section{margin:2rem auto;max-width:1024px;padding:1.5rem 2rem}.hero-section h1{font-size:1.5rem}.hero-section p{font-size:1rem}.hero-section a{padding:0.5rem 1rem;font-size:0.9rem}.grid-container{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));max-width:1024px}#graphic-design-book{max-width:1024px;margin:3rem auto}}
+@media(min-width:1280px){.hero-section{max-width:1400px}.grid-container{max-width:1400px}#graphic-design-book{max-width:1200px} }
 footer{background:var(--primary-dark);color:white;padding:1.5rem;text-align:center;box-shadow:inset 0 4px 12px rgba(0,0,0,0.2);border-top-left-radius:3rem;border-top-right-radius:3rem;margin-top:auto;font-size:0.85rem}
 footer a{text-decoration:underline;color:var(--primary-red)}
 </style>
@@ -84,16 +85,16 @@ footer a{text-decoration:underline;color:var(--primary-red)}
 <div class="hero-section-inner">
 <h1>Life Skills Books for Kids and Teens by Vikas Rana</h1>
 <p>Explore our collection of <strong>life skills books for kids and teens</strong> designed to help young readers build confidence, manage emotions, and master essential life skills.</p>
-<a href="#kids-books" id="exploreBtn" aria-label="Scroll to Life Skills Books section">👇 Explore</a>
+<a href="#life-skill-books-kids" id="exploreBtn" aria-label="Scroll to Life Skills Books section">👇 Explore</a>
 </div>
 </section>
 
-<section id="kids-books">
+<section id="life-skill-books-kids">
 <h2 class="section-title with-line">Life Skills Books for Kids & Teens</h2>
 <div class="grid-container" id="kids-books-grid"></div>
 </section>
 
-<section id="featured-adult">
+<section id="graphic-design-book">
 <h2 class="section-title with-line">Featured Graphic Design & Visual Creativity Book</h2>
 <div class="featured-card w-full">
 <div class="cover-wrapper"><img src="images/mastering-graphic-design.jpg" alt="Cover of 'Mastering Graphic Design' by Vikas Rana" loading="lazy" onerror="this.src='images/fallback.jpg';"></div>
@@ -125,7 +126,7 @@ footer a{text-decoration:underline;color:var(--primary-red)}
 
 <script defer>
 // Smooth scroll
-document.getElementById('exploreBtn').addEventListener('click', e => { e.preventDefault(); document.querySelector('#kids-books').scrollIntoView({behavior:'smooth'}); });
+document.getElementById('exploreBtn').addEventListener('click', e => { e.preventDefault(); document.querySelector('#life-skill-books-kids').scrollIntoView({behavior:'smooth'}); });
 
 // Particle canvas
 const canvas=document.getElementById('particleCanvas'),ctx=canvas.getContext('2d');let width=canvas.width=window.innerWidth,height=canvas.height=window.innerHeight;class Particle{constructor(){this.x=Math.random()*width;this.y=Math.random()*height;this.r=Math.random()*2+1;this.sx=(Math.random()-0.5)*0.8;this.sy=(Math.random()-0.5)*0.8;this.c=`rgba(227,64,55,${Math.random()*0.5+0.2})`;}update(){this.x+=this.sx;this.y+=this.sy;if(this.x<0||this.x>width)this.sx*=-1;if(this.y<0||this.y>height)this.sy*=-1;}draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=this.c;ctx.fill();}}
@@ -134,32 +135,63 @@ function animate(){if(animateParticles){ctx.clearRect(0,0,width,height);particle
 let resizeTimeout;window.addEventListener('resize',()=>{clearTimeout(resizeTimeout);resizeTimeout=setTimeout(()=>{width=canvas.width=window.innerWidth;height=canvas.height=window.innerHeight;},100);});
 animate();
 
-// Book cards
-const kidsBooks=[{title:"101 Life Skills Every Teen Should Master",description:"Manage stress, anxiety, and build confidence with practical tips every teen needs.",image:"images/101-life-skills.jpg",ebookUrl:"https://www.amazon.com/dp/B0F7SLR1JT",paperbackUrl:"https://www.amazon.com/dp/B0F7YZZ95L",alt:"Cover of '101 Life Skills Every Teen Should Master' by Vikas Rana"},{title:"Big Feelings, Bigger Stories",description:"Engaging short stories for kids to explore emotions and growth.",image:"images/big-feelings.jpg",ebookUrl:"https://www.amazon.com/dp/B0FFML3NTT",paperbackUrl:"https://www.amazon.com/dp/B0FFT3BMTX",alt:"Cover of 'Big Feelings, Bigger Stories' by Vikas Rana"},{title:"64 Essential Life Skills for Kids Ages 6-8",description:"A fun guide to build essential life skills and confidence for younger kids.",image:"images/64-essential-skills.jpg",ebookUrl:"https://www.amazon.com/dp/B0F26W79ND",paperbackUrl:"https://www.amazon.com/dp/B0F27SFM4K",alt:"Cover of '64 Essential Life Skills for Kids Ages 6-8' by Vikas Rana"},{title:"188 Skills Every Kid Has to Know",description:"Comprehensive skills guide for kids to thrive in daily life.",image:"images/188-skills.jpg",ebookUrl:"https://www.amazon.com/dp/B0F27PQYKK",paperbackUrl:"https://www.amazon.com/dp/B0F28J6WPZ",alt:"Cover of '188 Skills Every Kid Has to Know' by Vikas Rana"},{title:"60 Powerful Life Skills for Pre-teens",description:"Practical lessons for pre-teens to grow confident and independent.",image:"images/60-powerful-skills.jpg",ebookUrl:"https://www.amazon.com/dp/B0F1YJ12ML",paperbackUrl:"https://www.amazon.com/dp/B0F27HL4MY",alt:"Cover of '60 Powerful Life Skills for Pre-teens' by Vikas Rana"}];
-const gridContainer=document.getElementById('kids-books-grid');kidsBooks.forEach(book=>{const card=document.createElement('div');card.className='book-card';card.innerHTML=`<div class="cover-wrapper"><img src="${book.image}" alt="${book.alt}" loading="lazy" onerror="this.src='images/fallback.jpg';"></div><div class="card-content"><h3>${book.title}</h3><p>${book.description}</p><div class="btn-group"><a href="${book.ebookUrl}" target="_blank" rel="nofollow noopener noreferrer" class="btn btn-ebook">Kindle eBook</a><a href="${book.paperbackUrl}" target="_blank" rel="nofollow noopener noreferrer" class="btn btn-paperback">Paperback</a></div></div>`;gridContainer.appendChild(card);});
+// Book cards with full titles
+const kidsBooks = [
+  {title:"101 Life Skills Every Teen Should Master",description:"Manage stress, anxiety, and build confidence with practical tips every teen needs.",image:"images/101-life-skills.jpg",ebookUrl:"https://www.amazon.com/dp/B0F7SLR1JT",paperbackUrl:"https://www.amazon.com/dp/B0F7YZZ95L",alt:"Cover of '101 Life Skills Every Teen Should Master' by Vikas Rana"},
+  {title:"Big Feelings, Bigger Stories: Engaging Short Stories for Kids to Explore Emotions and Growth",description:"Engaging short stories for kids to explore emotions and growth.",image:"images/big-feelings.jpg",ebookUrl:"https://www.amazon.com/dp/B0FFML3NTT",paperbackUrl:"https://www.amazon.com/dp/B0FFT3BMTX",alt:"Cover of 'Big Feelings, Bigger Stories' by Vikas Rana"},
+  {title:"64 Essential Life Skills for Kids Ages 6-8: A Fun Guide to Build Confidence",description:"A fun guide to build essential life skills and confidence for younger kids.",image:"images/64-essential-skills.jpg",ebookUrl:"https://www.amazon.com/dp/B0F26W79ND",paperbackUrl:"https://www.amazon.com/dp/B0F27SFM4K",alt:"Cover of '64 Essential Life Skills for Kids Ages 6-8' by Vikas Rana"},
+  {title:"188 Skills Every Kid Has to Know: Comprehensive Skills Guide for Daily Life",description:"Comprehensive skills guide for kids to thrive in daily life.",image:"images/188-skills.jpg",ebookUrl:"https://www.amazon.com/dp/B0F27PQYKK",paperbackUrl:"https://www.amazon.com/dp/B0F28J6WPZ",alt:"Cover of '188 Skills Every Kid Has to Know' by Vikas Rana"},
+  {title:"60 Powerful Life Skills for Pre-teens: Practical Lessons for Growth and Independence",description:"Practical lessons for pre-teens to grow confident and independent.",image:"images/60-powerful-skills.jpg",ebookUrl:"https://www.amazon.com/dp/B0F1YJ12ML",paperbackUrl:"https://www.amazon.com/dp/B0F27HL4MY",alt:"Cover of '60 Powerful Life Skills for Pre-teens' by Vikas Rana"}
+];
+
+const gridContainer = document.getElementById('kids-books-grid');
+kidsBooks.forEach(book => {
+  const card = document.createElement('div');
+  card.className = 'book-card';
+  card.innerHTML = `
+    <div class="cover-wrapper">
+      <img src="${book.image}" alt="${book.alt}" loading="lazy" onerror="this.src='images/fallback.jpg';">
+    </div>
+    <div class="card-content">
+      <h3>${book.title}</h3>
+      <p>${book.description}</p>
+      <div class="btn-group">
+        <a href="${book.ebookUrl}" target="_blank" rel="nofollow noopener noreferrer" class="btn btn-ebook">Kindle eBook</a>
+        <a href="${book.paperbackUrl}" target="_blank" rel="nofollow noopener noreferrer" class="btn btn-paperback">Paperback</a>
+      </div>
+    </div>`;
+  gridContainer.appendChild(card);
+});
 
 // Image overlay
-const overlay=document.getElementById('imageOverlay'),overlayImg=overlay.querySelector('img'),closeOverlay=document.getElementById('closeOverlay');
-document.querySelectorAll('.cover-wrapper img').forEach(img=>{img.addEventListener('click',()=>{overlayImg.src=img.src;overlay.style.display='flex';});});
-closeOverlay.addEventListener('click',()=>{overlay.style.display='none';});
-overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.style.display='none';});
+const overlay = document.getElementById('imageOverlay'),
+      overlayImg = overlay.querySelector('img'),
+      closeOverlay = document.getElementById('closeOverlay');
+
+document.querySelectorAll('.cover-wrapper img').forEach(img => {
+  img.addEventListener('click', () => {
+    overlayImg.src = img.src;
+    overlay.style.display = 'flex';
+  });
+});
+
+closeOverlay.addEventListener('click', () => { overlay.style.display = 'none'; });
+overlay.addEventListener('click', e => { if(e.target===overlay) overlay.style.display='none'; });
 
 // JSON-LD @graph
-document.addEventListener('DOMContentLoaded',()=>{
-  const allBooks=[
-    {
-      "@type":"Book","name":"Mastering Graphic Design","description":"Deepen your understanding of color theory, layout, composition, and typography with practical examples.","image":"images/mastering-graphic-design.jpg","author":{"@type":"Person","name":"Vikas Rana"},"datePublished":"2025-02-16","isbn":"979-8310899582","inLanguage":"English","workExample":[{"@type":"Book","bookFormat":"https://schema.org/EBook","url":"https://www.amazon.com/dp/B0DXD7H994"},{"@type":"Book","bookFormat":"https://schema.org/Paperback","url":"https://www.amazon.com/dp/B0DXDZ1KP7"}]
-    },
+document.addEventListener('DOMContentLoaded', () => {
+  const allBooks = [
+    {"@type":"Book","name":"Mastering Graphic Design","description":"Deepen your understanding of color theory, layout, composition, and typography with practical examples.","image":"images/mastering-graphic-design.jpg","author":{"@type":"Person","name":"Vikas Rana"},"datePublished":"2025-02-16","isbn":"979-8310899582","inLanguage":"English","workExample":[{"@type":"Book","bookFormat":"https://schema.org/EBook","url":"https://www.amazon.com/dp/B0DXD7H994"},{"@type":"Book","bookFormat":"https://schema.org/Paperback","url":"https://www.amazon.com/dp/B0DXDZ1KP7"}]},
     {"@type":"Book","name":"101 Life Skills Every Teen Should Master","description":"Manage stress, anxiety, and build confidence with practical tips every teen needs.","image":"images/101-life-skills.jpg","author":{"@type":"Person","name":"Vikas Rana"},"datePublished":"2025-05-07","isbn":"979-8280277540","inLanguage":"English","workExample":[{"@type":"Book","bookFormat":"https://schema.org/EBook","url":"https://www.amazon.com/dp/B0F7SLR1JT"},{"@type":"Book","bookFormat":"https://schema.org/Paperback","url":"https://www.amazon.com/dp/B0F7YZZ95L"}]},
     {"@type":"Book","name":"Big Feelings, Bigger Stories","description":"Engaging short stories for kids to explore emotions and growth.","image":"images/big-feelings.jpg","author":{"@type":"Person","name":"Vikas Rana"},"datePublished":"2025-06-26","isbn":"979-8287914073","inLanguage":"English","workExample":[{"@type":"Book","bookFormat":"https://schema.org/EBook","url":"https://www.amazon.com/dp/B0FFML3NTT"},{"@type":"Book","bookFormat":"https://schema.org/Paperback","url":"https://www.amazon.com/dp/B0FFT3BMTX"}]},
     {"@type":"Book","name":"64 Essential Life Skills for Kids Ages 6-8","description":"A fun guide to build essential life skills and confidence for younger kids.","image":"images/64-essential-skills.jpg","author":{"@type":"Person","name":"Vikas Rana"},"datePublished":"2025-03-22","isbn":"979-8314020234","inLanguage":"English","workExample":[{"@type":"Book","bookFormat":"https://schema.org/EBook","url":"https://www.amazon.com/dp/B0F26W79ND"},{"@type":"Book","bookFormat":"https://schema.org/Paperback","url":"https://www.amazon.com/dp/B0F27SFM4K"}]},
     {"@type":"Book","name":"188 Skills Every Kid Has to Know","description":"Comprehensive skills guide for kids to thrive in daily life.","image":"images/188-skills.jpg","author":{"@type":"Person","name":"Vikas Rana"},"datePublished":"2025-03-23","isbn":"979-8312410358","inLanguage":"English","workExample":[{"@type":"Book","bookFormat":"https://schema.org/EBook","url":"https://www.amazon.com/dp/B0F27PQYKK"},{"@type":"Book","bookFormat":"https://schema.org/Paperback","url":"https://www.amazon.com/dp/B0F28J6WPZ"}]},
     {"@type":"Book","name":"60 Powerful Life Skills for Pre-teens","description":"Practical lessons for pre-teens to grow confident and independent.","image":"images/60-powerful-skills.jpg","author":{"@type":"Person","name":"Vikas Rana"},"datePublished":"2025-03-22","isbn":"979-8314336939","inLanguage":"English","workExample":[{"@type":"Book","bookFormat":"https://schema.org/EBook","url":"https://www.amazon.com/dp/B0F1YJ12ML"},{"@type":"Book","bookFormat":"https://schema.org/Paperback","url":"https://www.amazon.com/dp/B0F27HL4MY"}]}
   ];
-  const schema={"@context":"https://schema.org","@graph":allBooks};
-  const script=document.createElement('script');
+  const schema = {"@context":"https://schema.org","@graph":allBooks};
+  const script = document.createElement('script');
   script.type='application/ld+json';
-  script.textContent=JSON.stringify(schema);
+  script.textContent = JSON.stringify(schema);
   document.head.appendChild(script);
 });
 </script>
