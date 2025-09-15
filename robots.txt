@@ -1,0 +1,7 @@
+# Allow all search engines
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://books.toolblaster.com/sitemap.xml
