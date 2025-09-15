@@ -77,8 +77,12 @@ header span{color:white;font-weight:800;font-size:1.1rem}
 .author-image .author-initials-placeholder{display:flex;align-items:center;justify-content:center;width:120px;height:120px;border-radius:50%;background-color:var(--primary-red);color:white;font-size:3rem;font-weight:bold;font-family:'Inter',sans-serif}
 .author-bio h3{font-size:1.5rem;font-weight:800;color:var(--primary-red);margin-bottom:0.75rem;text-align:center}
 .author-bio p{font-size:0.95rem;color:#555;line-height:1.6;margin-bottom:0.5rem}
-.author-bio p:last-child{margin-bottom:0}
-.author-link-container {margin-top: 0.75rem;text-align: center;}
+/* New Author Note Styles */
+.author-note { margin-top: 1rem; padding: 1rem; background-color: #fef2f2; border-left: 4px solid var(--primary-red); border-radius: 0.25rem; }
+.author-note p { font-style: italic; color: #7f1d1d; font-size: 0.9rem; line-height: 1.6; }
+.author-note strong { font-weight: 600; color: #991b1b; display: block; margin-bottom: 0.25rem; font-style: normal;}
+
+.author-link-container {margin-top: 1.5rem;text-align: center;}
 .btn-amazon {background-color: #FF9900; color: var(--primary-dark); display: inline-flex; align-items: center; font-weight: 700; padding: 0.5rem 1rem;}
 .btn-amazon:hover {background-color: #e68a00;color: var(--primary-dark);}
 
@@ -156,6 +160,13 @@ footer a{text-decoration:underline;color:var(--primary-red)}
       <h3>Vikas Rana</h3>
       <p>Vikas Rana writes clear, practical guides to help readers build real-life skills and grow with confidence. His no-nonsense approach turns everyday challenges into simple steps for personal and professional success.</p>
       <p>Always curious, Vikas is passionate about exploring new topics and sharing fresh insights to empower readers on their journey.</p>
+      
+      <!-- A Note from the Author -->
+      <div class="author-note">
+        <strong>A Note from Vikas:</strong>
+        <p>"I believe the most important lessons aren't always taught in a classroom. My mission is to create simple, engaging guides that empower children with the confidence to navigate life's challenges and seize its opportunities. I hope these books become a trusted friend on your journey."</p>
+      </div>
+
       <div class="author-link-container">
         <a href="https://www.amazon.com/stores/Vikas-Rana/author/B0FC6R7Z3V" target="_blank" rel="noopener noreferrer" class="btn btn-amazon">
           View Amazon Author Profile
