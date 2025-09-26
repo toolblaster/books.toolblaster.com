@@ -31,9 +31,10 @@
 html,body{height:100%;margin:0;padding:0;font-family:'Inter',sans-serif;background:#f5f5f5;overflow-x:hidden;display:flex;flex-direction:column}
 #particleCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 :root{--primary-dark:#121212;--primary-red:#E34037}
-header{display:flex;align-items:center;justify-content:center;gap:0.5rem;background:var(--primary-dark);padding:1rem;border-bottom-left-radius:3rem;border-bottom-right-radius:3rem;position:relative;z-index:10}
+header{display:grid;place-items:center;background:var(--primary-dark);padding:1rem;border-bottom-left-radius:3rem;border-bottom-right-radius:3rem;position:relative;z-index:10}
 header svg{height:28px;width:28px;color:var(--primary-red)} 
 header span{color:white;font-weight:800;font-size:1.05rem}
+header a{display:flex;align-items:center;gap:0.5rem;text-decoration:none;}
 
 .hero-section {position: relative;background: linear-gradient(135deg, rgba(18,18,18,0.95), rgba(227,64,55,0.9));border-radius:0.75rem;margin:1.5rem;padding:1rem;color: #ffffff;text-align:center;z-index:5}
 .hero-section-inner{padding:0 0.5rem;text-align:center}
@@ -141,7 +142,7 @@ footer a{text-decoration:underline;color:var(--primary-red); cursor: pointer;}
 <canvas id="particleCanvas" aria-hidden="true"></canvas>
 
 <header>
-<a href="#home" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+<a href="#home">
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 0H6a2 2 0 00-2 2v12a2 2 0 002 2h6m0-14h6a2 2 0 012 2v12a2 2 0 01-2 2h-6m0-14v14"/></svg>
 <span>Books.Toolblaster</span>
 </a>
@@ -235,7 +236,7 @@ footer a{text-decoration:underline;color:var(--primary-red); cursor: pointer;}
                     </svg>
                     Privacy Policy
                 </h3>
-                <p><strong id="last-updated-date">Last Updated: September 26, 2025.</strong> Your privacy is important to us. This policy outlines how we handle your information on Books.Toolblaster.com.</p>
+                <p><strong>Last Updated: September 26, 2024.</strong> Your privacy is important to us. This policy outlines how we handle your information on Books.Toolblaster.com.</p>
                 
                 <p class="sub-heading">Information We Do Not Collect</p>
                 <p>This website is a showcase for books by Vikas Rana. We believe in your privacy, and therefore, <strong>we do not use cookies or tracking technologies to collect, store, or process any personal information</strong> from our visitors. You can browse this site with complete anonymity.</p>
@@ -273,7 +274,7 @@ footer a{text-decoration:underline;color:var(--primary-red); cursor: pointer;}
 
 
 <footer>
-  <p>© 2025 <strong>Life Skills Books by Vikas Rana</strong> | All rights reserved | <strong><a href="#legal">Contact & Legal</a></strong> | Books Available on <strong><a href="https://www.amazon.com/dp/B0F27MS9V4" target="_blank" rel="nofollow noopener noreferrer">Amazon</a></strong></p>
+  <p><span id="copyright-year"></span> <strong>Life Skills Books by Vikas Rana</strong> | All rights reserved | <strong><a href="#legal">Contact & Legal</a></strong> | Books Available on <strong><a href="https://www.amazon.com/dp/B0F27MS9V4" target="_blank" rel="nofollow noopener noreferrer">Amazon</a></strong></p>
 </footer>
 
 <div id="imageOverlay"><img src="" alt="Book Cover"><span id="closeOverlay" tabindex="0" aria-label="Close overlay">&times;</span></div>
@@ -309,7 +310,14 @@ function handleRouteChange() {
 // Listen for hash changes to switch "pages"
 window.addEventListener('hashchange', handleRouteChange);
 // Handle the initial page load based on the URL
-document.addEventListener('DOMContentLoaded', handleRouteChange);
+document.addEventListener('DOMContentLoaded', () => {
+    handleRouteChange();
+    // Set the copyright year automatically
+    const copyrightSpan = document.getElementById('copyright-year');
+    if(copyrightSpan) {
+        copyrightSpan.textContent = `© ${new Date().getFullYear()}`;
+    }
+});
 
 
 /* ==== SMOOTH SCROLL FOR HERO BUTTON ==== */
