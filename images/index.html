@@ -12,22 +12,18 @@
 <style>
 html,body{height:100%;margin:0;padding:0;font-family:'Inter',sans-serif;background:#f5f5f5;overflow-x:hidden;display:flex;flex-direction:column}
 :root{--primary-dark:#121212;--primary-red:#E34037}
-#particleCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 header{display:grid;place-items:center;background:var(--primary-dark);padding:1rem;border-bottom-left-radius:3rem;border-bottom-right-radius:3rem;position:relative;z-index:10}
 header svg{height:28px;width:28px;color:var(--primary-red)} 
 header span{color:white;font-weight:800;font-size:1.05rem}
 header a{display:flex;align-items:center;gap:0.5rem;text-decoration:none;}
 
-.section-title{text-align:center;margin:1.5rem 0;color:var(--primary-dark);font-weight:700;font-size:1.4rem}
-.section-title.with-line::after{content:'';display:block;width:80px;margin:0.75rem auto 0;border-bottom:2px solid #e5e7eb}
+.section-title{text-align:center;margin-bottom:1rem;color:var(--primary-dark);font-weight:700;font-size:1.3rem}
 
 footer{background:var(--primary-dark);color:white;padding:2rem 1.5rem;text-align:center;box-shadow:inset 0 4px 12px rgba(0,0,0,0.2);border-top-left-radius:3rem;border-top-right-radius:3rem;margin-top:auto;font-size:0.8rem; position: relative; z-index: 10;}
 footer a{text-decoration:underline;color:var(--primary-red); cursor: pointer;}
 </style>
 </head>
 <body class="flex flex-col min-h-screen">
-
-<canvas id="particleCanvas" aria-hidden="true"></canvas>
 
 <header>
 <a href="https://books.toolblaster.com">
@@ -37,67 +33,115 @@ footer a{text-decoration:underline;color:var(--primary-red); cursor: pointer;}
 </header>
 
 <!-- Main Page Content -->
-<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-    <div class="bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-xl shadow-lg border-t-4 border-red-600">
-        <h1 class="section-title with-line">Book Cover Gallery</h1>
-        <p class="text-center text-gray-600 mb-8">Click on any title to view the book cover image.</p>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+    <div class="text-center mb-6">
+        <a href="https://books.toolblaster.com" class="inline-flex items-center gap-2 bg-red-600 text-white font-medium px-4 py-2 rounded-md shadow-sm hover:bg-red-700 transition-colors text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+            </svg>
+            <span>Back to Homepage</span>
+        </a>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <h1 class="section-title">Book Cover Gallery</h1>
+        <p class="text-center text-gray-600 mb-6 text-sm">Click on any title to view the book cover image.</p>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             
-            <a href="101-life-skills.webp" class="bg-gray-50 p-5 rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 flex items-center gap-4 group">
-                <span class="text-3xl transform group-hover:rotate-[-10deg] transition-transform duration-300">🧑‍🎓</span>
-                <span class="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200">101 Life Skills Every Teen Should Master</span>
+            <a href="101-life-skills.webp" class="bg-gray-50 p-4 rounded-md hover:shadow-lg hover:bg-red-50 transition-all duration-200 flex items-center gap-3 group">
+                <span class="text-2xl">🧑‍🎓</span>
+                <span class="font-semibold text-gray-700 group-hover:text-red-600 text-base">101 Life Skills Every Teen Should Master</span>
             </a>
             
-            <a href="188-skills.webp" class="bg-gray-50 p-5 rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 flex items-center gap-4 group">
-                <span class="text-3xl transform group-hover:rotate-[-10deg] transition-transform duration-300">📚</span>
-                <span class="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200">188 Skills Every Kid Has to Know</span>
+            <a href="188-skills.webp" class="bg-gray-50 p-4 rounded-md hover:shadow-lg hover:bg-red-50 transition-all duration-200 flex items-center gap-3 group">
+                <span class="text-2xl">📚</span>
+                <span class="font-semibold text-gray-700 group-hover:text-red-600 text-base">188 Skills Every Kid Has to Know</span>
             </a>
             
-            <a href="60-powerful-skills.webp" class="bg-gray-50 p-5 rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 flex items-center gap-4 group">
-                <span class="text-3xl transform group-hover:rotate-[-10deg] transition-transform duration-300">🚀</span>
-                <span class="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200">60 Powerful Life Skills for Pre-teens</span>
+            <a href="60-powerful-skills.webp" class="bg-gray-50 p-4 rounded-md hover:shadow-lg hover:bg-red-50 transition-all duration-200 flex items-center gap-3 group">
+                <span class="text-2xl">🚀</span>
+                <span class="font-semibold text-gray-700 group-hover:text-red-600 text-base">60 Powerful Life Skills for Pre-teens</span>
             </a>
             
-            <a href="64-essential-skills.webp" class="bg-gray-50 p-5 rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 flex items-center gap-4 group">
-                <span class="text-3xl transform group-hover:rotate-[-10deg] transition-transform duration-300">🧒</span>
-                <span class="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200">64 Essential Life Skills for Kids</span>
+            <a href="64-essential-skills.webp" class="bg-gray-50 p-4 rounded-md hover:shadow-lg hover:bg-red-50 transition-all duration-200 flex items-center gap-3 group">
+                <span class="text-2xl">🧒</span>
+                <span class="font-semibold text-gray-700 group-hover:text-red-600 text-base">64 Essential Life Skills for Kids</span>
             </a>
             
-            <a href="big-feelings.webp" class="bg-gray-50 p-5 rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 flex items-center gap-4 group">
-                <span class="text-3xl transform group-hover:rotate-[-10deg] transition-transform duration-300">❤️</span>
-                <span class="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200">Big Feelings, Bigger Stories</span>
+            <a href="big-feelings.webp" class="bg-gray-50 p-4 rounded-md hover:shadow-lg hover:bg-red-50 transition-all duration-200 flex items-center gap-3 group">
+                <span class="text-2xl">❤️</span>
+                <span class="font-semibold text-gray-700 group-hover:text-red-600 text-base">Big Feelings, Bigger Stories</span>
             </a>
             
-            <a href="mastering-graphic-design.webp" class="bg-gray-50 p-5 rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 flex items-center gap-4 group">
-                <span class="text-3xl transform group-hover:rotate-[-10deg] transition-transform duration-300">🎨</span>
-                <span class="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200">Mastering Graphic Design</span>
+            <a href="mastering-graphic-design.webp" class="bg-gray-50 p-4 rounded-md hover:shadow-lg hover:bg-red-50 transition-all duration-200 flex items-center gap-3 group">
+                <span class="text-2xl">🎨</span>
+                <span class="font-semibold text-gray-700 group-hover:text-red-600 text-base">Mastering Graphic Design</span>
             </a>
             
         </div>
     </div>
 </main>
 
+<!-- Image Overlay -->
+<div id="imageOverlay" class="fixed inset-0 bg-black/80 z-50 hidden flex justify-center items-center p-4 transition-opacity duration-300 opacity-0">
+    <span id="closeOverlay" class="absolute top-4 right-6 text-white text-5xl font-bold cursor-pointer hover:text-red-500 transition-transform hover:scale-110" aria-label="Close image view">&times;</span>
+    <img src="" alt="Book Cover Preview" class="max-w-full max-h-full rounded-lg shadow-2xl transform transition-transform duration-300 scale-95">
+</div>
+
 
 <footer>
-  <p><span id="copyright-year"></span> <strong>Life Skills Books by Vikas Rana</strong> | All rights reserved | Books Available on <strong><a href="https://www.amazon.com/dp/B0F27MS9V4" target="_blank" rel="nofollow noopener noreferrer">Amazon</a></strong></p>
+  <p><span id="copyright-year"></span> <strong>Life Skills Books by Vikas Rana</strong> | All rights reserved | Books Available on <strong><a href="https://www.amazon.com/dp/BF27MS9V4" target="_blank" rel="nofollow noopener noreferrer">Amazon</a></strong></p>
 </footer>
 
 <script>
-    // Set the copyright year automatically
     document.addEventListener('DOMContentLoaded', () => {
+        // Set the copyright year automatically
         const copyrightSpan = document.getElementById('copyright-year');
         if(copyrightSpan) {
             copyrightSpan.textContent = `© ${new Date().getFullYear()}`;
         }
-    });
 
-    /* ==== PARTICLE BACKGROUND ==== */
-    const canvas=document.getElementById('particleCanvas'),ctx=canvas.getContext('2d');let width=canvas.width=window.innerWidth,height=canvas.height=window.innerHeight;class Particle{constructor(){this.x=Math.random()*width;this.y=Math.random()*height;this.r=Math.random()*2+1;this.sx=(Math.random()-0.5)*0.8;this.sy=(Math.random()-0.5)*0.8;this.c=`rgba(227,64,55,${Math.random()*0.5+0.2})`;}update(){this.x+=this.sx;this.y+=this.sy;if(this.x<0||this.x>width)this.sx*=-1;if(this.y<0||this.y>height)this.sy*=-1;}draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=this.c;ctx.fill();}}
-    let particles=[],animateParticles=false;if(window.innerWidth>=768){for(let i=0;i<80;i++){particles.push(new Particle());}animateParticles=true;}
-    function animate(){if(animateParticles){ctx.clearRect(0,0,width,height);particles.forEach(p=>{p.update();p.draw();});}requestAnimationFrame(animate);}
-    let resizeTimeout;window.addEventListener('resize',()=>{clearTimeout(resizeTimeout);resizeTimeout=setTimeout(()=>{width=canvas.width=window.innerWidth;height=canvas.height=window.innerHeight;},100);});
-    animate();
+        /* ==== IMAGE OVERLAY LOGIC ==== */
+        const overlay = document.getElementById('imageOverlay');
+        const overlayImg = overlay.querySelector('img');
+        const closeOverlay = document.getElementById('closeOverlay');
+        const gridContainer = document.querySelector('.grid');
+
+        gridContainer.addEventListener('click', e => {
+            const link = e.target.closest('a');
+            if (link) {
+                e.preventDefault();
+                overlayImg.src = link.href;
+                overlay.classList.remove('hidden');
+                setTimeout(() => {
+                    overlay.classList.remove('opacity-0');
+                    overlayImg.classList.remove('scale-95');
+                }, 10);
+            }
+        });
+
+        function hideOverlay() {
+            overlay.classList.add('opacity-0');
+            overlayImg.classList.add('scale-95');
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+                overlayImg.src = ''; 
+            }, 300);
+        }
+
+        closeOverlay.addEventListener('click', hideOverlay);
+        overlay.addEventListener('click', e => {
+            if (e.target === overlay) {
+                hideOverlay();
+            }
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
+                hideOverlay();
+            }
+        });
+    });
 </script>
 
 </body>
