@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Image Index | Books.Toolblaster</title>
+<title>Book Cover Gallery | Books.Toolblaster</title>
 <meta name="robots" content="noindex, nofollow"> <!-- Prevents search engines from indexing this page -->
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlPSIjRTM0MDM3IiBzdHJva2Utd2lkdGg9IjIiPjxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVpb2luPSJyb3VuZCIgZD0iTTEyIDZWNG0wIDBINmEyIDIgMCAwMC0yIDJ2MTJhMiAyIDAgMDAyIDJoNm0wLTE0aDZhMiAyIDAgMDEyIDJ2MTJhMiAyIDAgMDEtMiAyaC02bTAgLTE0djE4IiAvPjwvc3ZnPg==">
 
@@ -12,19 +12,22 @@
 <style>
 html,body{height:100%;margin:0;padding:0;font-family:'Inter',sans-serif;background:#f5f5f5;overflow-x:hidden;display:flex;flex-direction:column}
 :root{--primary-dark:#121212;--primary-red:#E34037}
+#particleCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 header{display:grid;place-items:center;background:var(--primary-dark);padding:1rem;border-bottom-left-radius:3rem;border-bottom-right-radius:3rem;position:relative;z-index:10}
 header svg{height:28px;width:28px;color:var(--primary-red)} 
 header span{color:white;font-weight:800;font-size:1.05rem}
 header a{display:flex;align-items:center;gap:0.5rem;text-decoration:none;}
 
-.section-title{text-align:center;margin:1.5rem 0;color:var(--primary-dark);font-weight:700;font-size:1.2rem}
+.section-title{text-align:center;margin:1.5rem 0;color:var(--primary-dark);font-weight:700;font-size:1.4rem}
 .section-title.with-line::after{content:'';display:block;width:80px;margin:0.75rem auto 0;border-bottom:2px solid #e5e7eb}
 
-footer{background:var(--primary-dark);color:white;padding:2rem 1.5rem;text-align:center;box-shadow:inset 0 4px 12px rgba(0,0,0,0.2);border-top-left-radius:3rem;border-top-right-radius:3rem;margin-top:auto;font-size:0.8rem;}
+footer{background:var(--primary-dark);color:white;padding:2rem 1.5rem;text-align:center;box-shadow:inset 0 4px 12px rgba(0,0,0,0.2);border-top-left-radius:3rem;border-top-right-radius:3rem;margin-top:auto;font-size:0.8rem; position: relative; z-index: 10;}
 footer a{text-decoration:underline;color:var(--primary-red); cursor: pointer;}
 </style>
 </head>
 <body class="flex flex-col min-h-screen">
+
+<canvas id="particleCanvas" aria-hidden="true"></canvas>
 
 <header>
 <a href="https://books.toolblaster.com">
@@ -34,40 +37,41 @@ footer a{text-decoration:underline;color:var(--primary-red); cursor: pointer;}
 </header>
 
 <!-- Main Page Content -->
-<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-600">
-        <h1 class="section-title with-line">Image Directory</h1>
-        <p class="text-center text-gray-600 mb-6">A list of all image assets in this folder.</p>
-        <div class="space-y-3">
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+    <div class="bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-xl shadow-lg border-t-4 border-red-600">
+        <h1 class="section-title with-line">Book Cover Gallery</h1>
+        <p class="text-center text-gray-600 mb-8">Click on any title to view the book cover image.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <a href="101-life-skills.webp" class="block text-lg text-gray-800 hover:text-red-600 transition-colors duration-200 flex items-center gap-3">
-                <span class="text-2xl">🧑‍🎓</span>
-                <span>101 Life Skills Every Teen Should Master</span>
+            <a href="101-life-skills.webp" class="bg-gray-50 p-5 rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 flex items-center gap-4 group">
+                <span class="text-3xl transform group-hover:rotate-[-10deg] transition-transform duration-300">🧑‍🎓</span>
+                <span class="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200">101 Life Skills Every Teen Should Master</span>
             </a>
             
-            <a href="188-skills.webp" class="block text-lg text-gray-800 hover:text-red-600 transition-colors duration-200 flex items-center gap-3">
-                <span class="text-2xl">📚</span>
-                <span>188 Skills Every Kid Has to Know: Comprehensive Skills Guide for Daily Life</span>
+            <a href="188-skills.webp" class="bg-gray-50 p-5 rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 flex items-center gap-4 group">
+                <span class="text-3xl transform group-hover:rotate-[-10deg] transition-transform duration-300">📚</span>
+                <span class="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200">188 Skills Every Kid Has to Know</span>
             </a>
             
-            <a href="60-powerful-skills.webp" class="block text-lg text-gray-800 hover:text-red-600 transition-colors duration-200 flex items-center gap-3">
-                <span class="text-2xl">🚀</span>
-                <span>60 Powerful Life Skills for Pre-teens: Practical Lessons for Growth and Independence</span>
+            <a href="60-powerful-skills.webp" class="bg-gray-50 p-5 rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 flex items-center gap-4 group">
+                <span class="text-3xl transform group-hover:rotate-[-10deg] transition-transform duration-300">🚀</span>
+                <span class="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200">60 Powerful Life Skills for Pre-teens</span>
             </a>
             
-            <a href="64-essential-skills.webp" class="block text-lg text-gray-800 hover:text-red-600 transition-colors duration-200 flex items-center gap-3">
-                <span class="text-2xl">🧒</span>
-                <span>64 Essential Life Skills for Kids Ages 6-8: A Fun Guide to Build Confidence</span>
+            <a href="64-essential-skills.webp" class="bg-gray-50 p-5 rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 flex items-center gap-4 group">
+                <span class="text-3xl transform group-hover:rotate-[-10deg] transition-transform duration-300">🧒</span>
+                <span class="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200">64 Essential Life Skills for Kids</span>
             </a>
             
-            <a href="big-feelings.webp" class="block text-lg text-gray-800 hover:text-red-600 transition-colors duration-200 flex items-center gap-3">
-                <span class="text-2xl">❤️</span>
-                <span>Big Feelings, Bigger Stories: Engaging Short Stories for Kids to Explore Emotions and Growth</span>
+            <a href="big-feelings.webp" class="bg-gray-50 p-5 rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 flex items-center gap-4 group">
+                <span class="text-3xl transform group-hover:rotate-[-10deg] transition-transform duration-300">❤️</span>
+                <span class="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200">Big Feelings, Bigger Stories</span>
             </a>
             
-            <a href="mastering-graphic-design.webp" class="block text-lg text-gray-800 hover:text-red-600 transition-colors duration-200 flex items-center gap-3">
-                <span class="text-2xl">🎨</span>
-                <span>Mastering Graphic Design: A Comprehensive Guide to Visual Creativity</span>
+            <a href="mastering-graphic-design.webp" class="bg-gray-50 p-5 rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 flex items-center gap-4 group">
+                <span class="text-3xl transform group-hover:rotate-[-10deg] transition-transform duration-300">🎨</span>
+                <span class="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200">Mastering Graphic Design</span>
             </a>
             
         </div>
@@ -87,6 +91,13 @@ footer a{text-decoration:underline;color:var(--primary-red); cursor: pointer;}
             copyrightSpan.textContent = `© ${new Date().getFullYear()}`;
         }
     });
+
+    /* ==== PARTICLE BACKGROUND ==== */
+    const canvas=document.getElementById('particleCanvas'),ctx=canvas.getContext('2d');let width=canvas.width=window.innerWidth,height=canvas.height=window.innerHeight;class Particle{constructor(){this.x=Math.random()*width;this.y=Math.random()*height;this.r=Math.random()*2+1;this.sx=(Math.random()-0.5)*0.8;this.sy=(Math.random()-0.5)*0.8;this.c=`rgba(227,64,55,${Math.random()*0.5+0.2})`;}update(){this.x+=this.sx;this.y+=this.sy;if(this.x<0||this.x>width)this.sx*=-1;if(this.y<0||this.y>height)this.sy*=-1;}draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=this.c;ctx.fill();}}
+    let particles=[],animateParticles=false;if(window.innerWidth>=768){for(let i=0;i<80;i++){particles.push(new Particle());}animateParticles=true;}
+    function animate(){if(animateParticles){ctx.clearRect(0,0,width,height);particles.forEach(p=>{p.update();p.draw();});}requestAnimationFrame(animate);}
+    let resizeTimeout;window.addEventListener('resize',()=>{clearTimeout(resizeTimeout);resizeTimeout=setTimeout(()=>{width=canvas.width=window.innerWidth;height=canvas.height=window.innerHeight;},100);});
+    animate();
 </script>
 
 </body>
