@@ -41,8 +41,12 @@ header a{display:flex;align-items:center;gap:0.5rem;text-decoration:none;}
 .hero-section-inner{padding:0 0.5rem;text-align:center}
 .hero-section h1{font-size:1.2rem;font-weight:800;margin-bottom:0.5rem;text-shadow:0 2px 4px rgba(0,0,0,0.8)}
 .hero-section p{margin-bottom:0.5rem;font-size:0.875rem;text-shadow:0 1px 3px rgba(0,0,0,0.8)}
-.hero-section a{margin-top:0.5rem;display:inline-block;padding:0.4rem 0.8rem;background:var(--primary-red);color:white;border-radius:0.4rem;font-weight:600;text-decoration:none;font-size:0.8rem;transition:all 0.2s ease}
+/* FIX: Updated button styles for better icon alignment. */
+.hero-section a{margin-top:0.5rem;display:inline-flex;align-items:center;gap:0.35rem;padding:0.4rem 0.8rem;background:var(--primary-red);color:white;border-radius:0.4rem;font-weight:600;text-decoration:none;font-size:0.8rem;transition:all 0.2s ease}
+.hero-section a svg{width:1.1rem;height:1.1rem;transition:transform 0.2s ease-in-out;}
 .hero-section a:hover{background:#c22f2f}
+.hero-section a:hover svg{transform: translateY(2px);}
+
 
 .section-title{text-align:center;margin:1.5rem 0;color:var(--primary-dark);font-weight:700;font-size:1.2rem}
 .section-title.with-line::after{content:'';display:block;width:80px;margin:0.75rem auto 0;border-bottom:2px solid #e5e7eb}
@@ -155,7 +159,13 @@ footer a{text-decoration:underline;color:var(--primary-red); cursor: pointer;}
       <div class="hero-section-inner">
         <h1>Life Skills Books for Kids and Teens by Vikas Rana</h1>
         <p>Explore our collection of <strong>life skills books for kids and teens</strong> designed to help young readers build confidence, manage emotions, and master essential life skills.</p>
-        <a href="#life-skill-books-kids" id="exploreBtn" aria-label="Scroll to Life Skills Books section">ðŸ‘‡ Browse the Book Collection</a>
+        <!-- FIX: Replaced the emoji with a stable inline SVG icon for consistent rendering. -->
+        <a href="#life-skill-books-kids" id="exploreBtn" aria-label="Scroll to Life Skills Books section">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+            Browse the Book Collection
+        </a>
       </div>
     </section>
 
