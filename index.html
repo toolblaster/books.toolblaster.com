@@ -285,7 +285,10 @@ footer a{text-decoration:underline;color:var(--primary-red); cursor: pointer;}
 
 
 <footer>
-  <p><span id="copyright-year"></span> <strong>Life Skills Books by Vikas Rana</strong> | All rights reserved | <strong><a href="#legal">Contact & Legal</a></strong> | Books Available on <strong><a href="https://www.amazon.com/dp/B0F27MS9V4" target="_blank" rel="nofollow noopener noreferrer">Amazon</a></strong></p>
+  <p>
+    <span id="copyright-year"></span> <strong>Life Skills Books by Vikas Rana</strong>. All rights reserved.
+    <br class="sm:hidden"> A Project by <a href="https://www.toolblaster.com" target="_blank" rel="noopener noreferrer">toolblaster.com</a> | <strong><a href="#legal">Contact & Legal</a></strong>
+  </p>
 </footer>
 
 <div id="imageOverlay"><img src="" alt="Book Cover"><span id="closeOverlay" tabindex="0" aria-label="Close overlay">&times;</span></div>
@@ -326,7 +329,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set the copyright year automatically
     const copyrightSpan = document.getElementById('copyright-year');
     if(copyrightSpan) {
-        copyrightSpan.textContent = `Â© ${new Date().getFullYear()}`;
+        // FIX: Corrected the character encoding issue for the copyright symbol.
+        copyrightSpan.textContent = `© ${new Date().getFullYear()}`;
     }
 });
 
